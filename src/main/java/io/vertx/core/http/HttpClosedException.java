@@ -44,4 +44,10 @@ public class HttpClosedException extends VertxException {
   public GoAway goAway() {
     return goAway != null ? new GoAway(goAway) : null;
   }
+
+  @Override
+  public synchronized Throwable fillInStackTrace() {
+    return this;
+  }
+
 }
